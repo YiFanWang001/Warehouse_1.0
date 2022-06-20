@@ -1,0 +1,569 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow: hidden;
+}
+
+.header {
+    position: fixed;
+    width: 100%;
+    height: 88px;
+    top: 0;
+    left: 0;
+    /* background-color: #000; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-width: 1205px;
+    z-index: 999999999999;
+    background: url(./imgs/bg_top.png);
+}
+
+.logo {
+    width: 129px;
+    height: 66px;
+}
+
+.nav_a {
+    color: #fff;
+    float: left;
+    margin: 0 30px;
+    font-size: 14px;
+}
+
+.nav_a:hover {
+    color: #e69800;
+}
+
+a {
+    text-decoration: none
+}
+
+.yellow {
+    color: #e69800;
+}
+
+.go_official {
+    width: 142px;
+    height: 40px;
+    background-color: #e69800;
+    color: #fff;
+    line-height: 40px;
+}
+
+video {
+    width: 100%;
+    height: 100vh;
+    object-fit: fill;
+}
+
+.paging {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1234;
+}
+
+.home_a {
+    display: block;
+    width: 80px;
+    height: 80px;
+    background: url(./imgs/sprite.png);
+    margin-bottom: 10px;
+}
+
+.paging {
+    height: 100%;
+    position: relative;
+}
+
+.homepage {
+    height: 100%;
+    transition: margin-top .7s ease;
+    /* transition: margin-top .7s ease; */
+}
+
+.background {
+    width: 540px;
+    height: 200px;
+    background: url(./imgs/sprite.png);
+    background-position: -250px -220px;
+}
+
+.two_background {
+    width: 540px;
+    height: 200px;
+    background: url(./imgs/sprite.png);
+    background-position: -800px -220px;
+}
+
+.span {
+    color: #fff;
+    position: absolute;
+    bottom: -16px;
+    left: 0;
+}
+
+
+/* .experience {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+} */
+
+.botton {
+    position: fixed;
+    left: 50%;
+    bottom: 50px;
+    transform: translate(-50%, 0);
+    z-index: 111111;
+}
+
+.botton_img {
+    width: 24px;
+    height: 80px;
+    background: url(./imgs/sprite.png) -86px 0;
+}
+
+.breathing span {
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 20px;
+    border: 0;
+    color: #e69800;
+    position: absolute;
+    top: 65%;
+    left: 60%;
+}
+
+.breathing .one_lamp:nth-child(2) {
+    animation: breadthFrame 1s linear infinite;
+}
+
+.breathing .one_lamp:last-child {
+    animation: breadthFrame2 1s linear infinite;
+}
+
+@keyframes breadthFrame {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(2);
+    }
+}
+
+@keyframes breadthFrame2 {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(3);
+    }
+}
+
+.one_click {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 123;
+    top: 0;
+    padding: 0;
+    background: url(./imgs/bg_section1.jpg);
+    display: none;
+}
+
+.two_click {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 123;
+    top: 0;
+    padding: 0;
+    background: url(./imgs/bg_section2.jpg);
+    display: none;
+}
+
+.man_img {
+    position: absolute;
+    top: 50%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+    display: none;
+    z-index: 1234;
+}
+
+.man {
+    width: 319px;
+    height: 732px;
+}
+
+.hat {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top: 5%;
+    left: -25%;
+    background: url(./imgs/equip.png) 0 0;
+    border: 2px #000 solid;
+}
+
+.man_two_img {
+    position: absolute;
+    top: 50%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+    display: none;
+    z-index: 1234;
+}
+
+.nwm {
+    width: 580px;
+    height: 111px;
+    background: url(./imgs/weapon.png) 0 0;
+}
+
+.m4a1 {
+    margin-top: 150px;
+    width: 580px;
+    height: 225px;
+    background: url(./imgs/weapon.png)0 -111px;
+}
+
+.parts {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    border: 2px #000 solid;
+}
+
+.parts_one {
+    top: -90px;
+    left: 55%;
+    background: url(./imgs/equip.png) 0 -815px;
+}
+
+.parts_two {
+    top: 100px;
+    left: 0%;
+    background: url(./imgs/equip.png) 0 -935px;
+}
+
+.parts_three {
+    top: 105px;
+    left: 55%;
+    background: url(./imgs/equip.png) 0 -875px;
+}
+
+.parts_four {
+    top: 105px;
+    right: 0%;
+    background: url(./imgs/equip.png) 0 -995px;
+}
+
+.parts_five {
+    top: 205px;
+    left: 55%;
+    background: url(./imgs/equip.png) 0 -815px;
+}
+
+.parts_six {
+    top: 380px;
+    left: 0%;
+    background: url(./imgs/equip.png) 0 -1115px;
+}
+
+.parts_seven {
+    top: 485px;
+    left: 45%;
+    background: url(./imgs/equip.png) 0 -1175px;
+}
+
+.weather,
+.terrain {
+    width: 100vw;
+    height: 100%;
+    display: flex;
+}
+
+.terrain {
+    display: none;
+}
+
+.weather_noe {
+    height: 100vh;
+    background: url(./imgs/img_weather1.jpg) 0 0;
+    flex: 1;
+}
+
+.weather_img:hover {
+    animation: donghua .5s forwards;
+}
+
+.weather_two {
+    height: 100vh;
+    background: url(./imgs/img_weather2.jpg) 0 0;
+    flex: 1;
+}
+
+.weather_three {
+    height: 100vh;
+    background: url(./imgs/img_weather3.jpg) 0 0;
+    flex: 1;
+}
+
+@keyframes donghua {
+    0% {
+        flex: 1;
+    }
+    100% {
+        flex: 2;
+    }
+}
+
+.terrain_noe {
+    height: 100vh;
+    background: url(./imgs/img_terrain1.jpg) 0 0;
+    flex: 1;
+}
+
+.terrain_two {
+    height: 100vh;
+    background: url(./imgs/img_terrain2.jpg) 0 0;
+    flex: 1;
+}
+
+.terrain_three {
+    height: 100vh;
+    background: url(./imgs/img_terrain3.jpg) 0 0;
+    flex: 1;
+}
+
+.terrain_four {
+    height: 100vh;
+    background: url(./imgs/img_terrain4.jpg) 0 0;
+    flex: 1;
+}
+
+.terrain_five {
+    height: 100vh;
+    background: url(./imgs/img_terrain5.jpg) 0 0;
+    flex: 1;
+}
+
+.weather_title {
+    margin: 0 auto;
+    width: 90px;
+    height: 75px;
+    margin-top: 700px;
+}
+
+.pain {
+    background: url(./imgs/sprite.png)-240px -680px;
+}
+
+.sunny {
+    background: url(./imgs/sprite.png)-337px -680px;
+}
+
+.fog {
+    background: url(./imgs/sprite.png)-433px -680px;
+}
+
+.page_three {
+    position: absolute;
+    left: 50%;
+    bottom: 10%;
+    transform: translate(-50%, 0);
+    display: flex;
+    text-align: center;
+}
+
+.three_button {
+    width: 110px;
+    height: 90px;
+}
+
+.weather_left {
+    background: url(./imgs/sprite.png)-0 -762px;
+    margin-right: 200px;
+}
+
+.weather_right {
+    width: 120px;
+    background: url(./imgs/sprite.png)-110px -678px;
+}
+
+.terrain_title {
+    margin-top: 100px;
+}
+
+
+/*  */
+
+botton_img .terrain_title p {
+    font-size: 10px;
+}
+
+.weather_terrain {
+    width: 730px;
+    height: 85px;
+    background: url(./imgs/sprite.png)0 -420px;
+    position: absolute;
+    left: 50%;
+    top: 15%;
+    transform: translate(-50%, 0);
+}
+
+.four_background {
+    background: url(./imgs/sprite.png) 0 -510px;
+    width: 375px;
+    height: 80px;
+}
+
+.five_background {
+    margin-left: 150px;
+    width: 375px;
+    height: 80px;
+    background: url(./imgs/sprite.png) -375px -510px;
+}
+
+.four_click {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 123;
+    top: 0;
+    padding: 0;
+    background: url(./imgs/bg_section4.jpg);
+    display: none;
+}
+
+.vehicle {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.wehicle_img {
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.block {
+    display: block;
+}
+
+.Vehicle_click {
+    margin: 0 auto;
+    margin-bottom: 200px;
+    display: flex;
+}
+
+.vehicleall {
+    width: 84px;
+    height: 66px;
+    margin-left: 30px;
+}
+
+.vehicle_one {
+    background: url(./imgs/sprite.png)0 -913px;
+    width: 66px;
+}
+
+.vehicle_two {
+    background: url(./imgs/sprite.png)-73px -850px;
+}
+
+.vehicle_three {
+    width: 98px;
+    background: url(./imgs/sprite.png)-160px -850px;
+}
+
+.vehicle_four {
+    width: 98px;
+    background: url(./imgs/sprite.png)-262px -850px;
+}
+
+.vehicle_five {
+    background: url(./imgs/sprite.png)-360px -850px;
+}
+
+.top_move {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    display: flex;
+    transform: translate(-50%, 0);
+}
+
+.vehicle_click {
+    display: flex;
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.vehicleall p {
+    width: 100%;
+    text-align: center;
+    margin-top: 70px;
+    color: #fff;
+}
+
+.videos_five {
+    width: 360px;
+    height: 360px;
+    border-radius: 50%;
+    display: none;
+}
+
+.page_five {
+    width: 100vw;
+    height: 100vh;
+    background: url(./imgs/bg_section5.jpg);
+    position: relative;
+}
+
+.five_one,
+.videos_five_one {
+    position: absolute;
+    top: 500px;
+    left: 750px;
+}
+
+.five_two,
+.videos_five_two {
+    position: absolute;
+    top: 660px;
+    left: 1170px;
+}
