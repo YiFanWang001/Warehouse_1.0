@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>清除浮动</title>
+    <style>
+        section {
+            border: 3px solid red;
+            width: 500px;
+        }
+
+        .left {
+            width: 200px;
+            height: 200px;
+            background: orange;
+            float: left;
+        }
+
+        .middle {
+            width: 100px;
+            height: 100px;
+            background: green;
+            float: left;
+        }
+
+        .right {
+            width: 50px;
+            height: 50px;
+            background: red;
+        }
+
+        .clearfix {
+            clear: both;
+        }
+
+        .overflow {
+            overflow: hidden;
+        }
+
+        .split {
+            height: 30px;
+            clear: both;
+        }
+
+        .clearfix1::after {
+            /*伪元素是行内元素 正常浏览器清除浮动方法*/
+            content: "";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+
+        .clearfix1 {
+            *zoom: 1;
+            /*ie6清除浮动的方式 *号只有IE6-IE7执行，其他浏览器不执行*/
+        }
+
+        .clearfix2::after,
+        .clearfix2::before {
+            content: "";
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <header>
+            <h1>浮动状态（父元素的高度未被撑开）</h1>
+        </header>
+        <div>
+            <div class="left">左边</div>
+            <div class="middle">中间</div>
+            <div class="right">最后</div>
+        </div>
+    </section>
+    <div class="split"></div>
+    <section>
+        <header>
+            <h1>额外标签法</h1>
+        </header>
+        <div>
+            <div class="left">左边</div>
+            <div class="middle">中间</div>
+            <div class="clearfix">额外标签</div>
+            <div class="right">最后</div>
+        </div>
+    </section>
+    <div class="split"></div>
+    <section class="overflow">
+        <header>
+            <h1>添加Overflow法</h1>
+        </header>
+        <div>
+            <div class="left">左边</div>
+            <div class="middle">中间</div>
+            <div class="right">最后</div>
+        </div>
+    </section>
+    <div class="split"></div>
+    <section>
+        <header>
+            <h1>使用after伪元素清除浮动</h1>
+        </header>
+        <div class="clearfix1">
+            <div class="left">左边</div>
+            <div class="middle">中间</div>
+        </div>
+        <div class="right">最后</div>
+    </section>
+    <div class="split"></div>
+    <section>
+        <header>
+            <h1>使用before和after双伪元素清除浮动</h1>
+        </header>
+        <div class="clearfix2">
+            <div class="left">左边</div>
+            <div class="middle">中间</div>
+        </div>
+        <div class="right">最后</div>
+    </section>
+</body>
+
+</html>

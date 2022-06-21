@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>水平和垂直居中</title>
+    <style>
+        .parent {
+            width: 400px;
+            height: 400px;
+            background: red;
+            position: relative;
+        }
+
+        .child {
+            width: 200px;
+            height: 200px;
+            background: yellow;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            /* margin-left: -100px;
+            margin-top: -100px; */
+            transform: translate(-50%, -50%);
+        }
+
+        .flex {
+            width: 400px;
+            height: 400px;
+            background: red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .flex-child {
+            width: 200px;
+            height: 200px;
+            background: yellow;
+        }
+
+        .auto {
+            width: 200px;
+            height: 200px;
+            background: yellow;
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>方法一：父相子绝，子分部向左向上移动本身宽度和高度的一半（也可以用 transform:translate(-50%,-50%)）最常用方法。</h3>
+    <div class="parent">
+        <div class="child">
+        </div>
+    </div>
+    <hr />
+    <h3>方法二：父元素设置成弹性盒，子元素横向居中，纵向居中。</h3>
+    <div class="flex">
+        <div class="flex-child">
+        </div>
+    </div>
+    <h3>方法三：父相子绝，子元素所有定位为0，margin设置auto自适应。</h3>
+    <div class="parent">
+        <div class="auto">
+        </div>
+    </div>
+</body>
+
+</html>

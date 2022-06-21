@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>响应式布局</title>
+    <style>
+        html {
+            font-size: 13px;
+        }
+
+        .rem {
+            font-size: 1.5rem;
+            margin-left: 3rem;
+            height: 5rem;
+            background: violet;
+            color: white;
+        }
+
+        .parent {
+            width: 500px;
+            background: yellow;
+        }
+
+        .inner {
+            width: 80%;
+            margin: 10px 0;
+            margin-left: 10%;
+            background: red;
+            color: white;
+        }
+
+        .vw {
+            width: 80vw;
+            background: green;
+            color: white;
+            margin-left: 10vw;
+        }
+
+        @media screen and (max-width:599px) {
+            body {
+                background: rgb(255, 237, 203);
+            }
+        }
+
+        @media screen and (min-width:600px) {
+            body {
+                background: rgb(100, 84, 55);
+            }
+        }
+
+        @media screen and (min-width:960px) {
+            body {
+                background: orange;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        我是body中的13px字体大小。
+    </div>
+    <div class="rem">
+        我是1.5rem，margin-left:3rem;height:5rem;我受页面的字体大小影响。
+    </div>
+    <div class="parent">
+        我是父元素，有500px
+        <div class="inner">
+            我是使用80%布局的，margin-left:10%
+        </div>
+        <div class="vw">
+            我是使用80vw布局的，margin-left:10vw
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div,
+        span {
+            padding: 0;
+        }
+
+        .three {
+            display: inline-block;
+            width: 100px;
+            height: 10px;
+            border-top: 30px double;
+            border-bottom: 10px solid;
+        }
+
+        .more {
+            display: inline-block;
+            width: 100px;
+        }
+
+        .more::before {
+            content: '';
+            display: block;
+            background: currentColor;
+            height: 10px;
+        }
+
+        .more::after {
+            content: '';
+            display: block;
+            background: currentColor;
+            height: 10px;
+        }
+
+        .more .middle {
+            background: currentColor;
+            height: 10px;
+            margin: 10px 0;
+        }
+
+        .menu {
+            display: inline-block;
+            width: 100px;
+            height: 10px;
+            padding: 10px 0;
+            border-top: 10px solid;
+            border-bottom: 10px solid;
+            background-color: currentColor;
+            background-clip: content-box;
+        }
+
+        .dot {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            padding: 10px;
+            border: 10px solid;
+            border-radius: 50%;
+            background-color: currentColor;
+            background-clip: content-box;
+        }
+    </style>
+</head>
+
+<body>
+
+    <body>
+        <div class="three"></div>
+        <div class="more">
+            <div class="middle"></div>
+        </div>
+        <div class="menu"></div>
+        <div class="dot"></div>
+    </body>
+</body>
+
+</html>

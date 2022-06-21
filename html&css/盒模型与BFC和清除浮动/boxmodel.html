@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #outer {
+            margin: 100px;
+            padding: 10px;
+            border: 5px solid red;
+            width: 200px;
+            height: 200px;
+            overflow: auto;
+        }
+
+        #inner {
+            width: 100px;
+            height: 500px;
+            border: 10px solid yellow;
+            border-left-width: 20px;
+            border-right-width: 30px;
+            border-bottom-width: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="outer">
+        <div id="inner">
+        </div>
+    </div>
+    <script>
+        const outer = document.getElementById('outer');
+        const inner = document.getElementById('inner');
+        outer.onscroll = () => {
+            console.log('scrollHeight', outer.scrollHeight);
+            console.log('scrollTop', outer.scrollTop);
+        };
+
+        console.log('offsetTop', inner.offsetTop);
+        console.log('scrollTop', outer.scrollTop);
+        console.log('clientTop', inner.clientTop);
+
+        console.log('offsetHeight', inner.offsetHeight);
+        console.log('offsetHeight', inner.offsetHeight);
+        console.log('clientHeight', inner.clientHeight);
+        console.log('scrollHeight', outer.scrollHeight);
+        console.log('style.height', inner.style.height);
+
+        console.log('offsetWidth', inner.offsetWidth);
+        console.log('clientWidth', inner.clientWidth);
+        console.log('scrollWidth', inner.scrollWidth);
+
+        console.log('clientLeft', inner.clientLeft);
+        console.log('offsetLeft', inner.offsetLeft);
+        console.log('scrollLeft', inner.scrollLeft);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>box-sizing</title>
+</head>
+<style>
+    div {
+        background: red;
+        border: 10px solid green;
+        width: 100px;
+        height: 100px;
+        padding: 20px;
+        margin: 20px;
+    }
+
+    .content {
+        box-sizing: content-box;
+    }
+
+    .border {
+        box-sizing: border-box;
+    }
+</style>
+
+<body>
+    <div class="content">
+        我是content-box
+    </div>
+    <div class="border">
+        我是border-box
+    </div>
+</body>
+
+</html>

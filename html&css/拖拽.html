@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>拖拽</title>
+    <style>
+        #box {
+            border: 5px solid #fdd8d8;
+            width: 500px;
+            height: 500px;
+            position: relative;
+        }
+
+        #move {
+            border: 5px solid #504040;
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <div id="move">
+        </div>
+    </div>
+    <script>
+        const box = document.all.box;
+        const move = document.all.move;
+        let position = null;
+        const boxRetangle = {
+            width: box.clientWidth,
+            height: box.clientHeight
+        }
+        const moveRetangle = {
+            width: move.offsetWidth,
+            height: move.offsetHeight,
+        }
+        move.onmousedown = function (e) {
+            moveRetangle.x = move.offsetLeft;
+            moveRetangle.y = move.offsetTop;
+            position = {
+                x: e.screenX,
+                y: e.screenY
+            };
+
+            document.onmousemove = function (e) {
+                let left = moveRetangle.x + e.screenX - position.x;
+                let top = moveRetangle.y + e.screenY - position.y;
+                if (left < 0) {
+                    left = 0;
+                }
+                if (left + moveRetangle.width > boxRetangle.width) {
+                    left = boxRetangle.width - moveRetangle.width;
+                }
+                if (top < 0) {
+                    top = 0;
+                }
+                if (moveRetangle.height + top > boxRetangle.height) {
+                    top = boxRetangle.height - moveRetangle.height;
+                }
+                move.style.left = left + 'px';
+                move.style.top = top + 'px'
+            }
+
+            document.onmouseup = function (e) {
+                this.onmousemove = null;
+            }
+        }
+
+    </script>
+</body>
+
+</html>

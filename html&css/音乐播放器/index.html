@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>音乐播放器</title>
+    <style>
+        .panel {
+            position: relative;
+            margin: 20px;
+        }
+
+        .cdbk {
+            width: 500px;
+            height: 500px;
+        }
+
+        .disk {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            left: 50px;
+            top: 50px;
+            z-index: 6;
+        }
+
+        .control {
+            position: absolute;
+            left: -70px;
+            top: 87px;
+            width: 110px;
+            transform: rotate(-130deg);
+            transform-origin: top right;
+            z-index: 7;
+            transition: transform .8s ease-out;
+        }
+
+        .logo {
+            position: absolute;
+            left: 178px;
+            top: 184px;
+            width: 140px;
+            height: 140px;
+            z-index: 5;
+            animation: play 4.6s linear 0;
+        }
+
+        @keyframes play {
+            from {
+                transform: rotate(0);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .play .logo {
+            animation-iteration-count: infinite;
+        }
+
+        .play .control {
+            transform: rotate(-103deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="panel">
+        <img class="cdbk" src="./cdbk.png" alt="">
+        <img src="./cddisk.png" class="disk" alt="">
+        <img class="control" src="./controllerArm.png" alt="">
+        <img class="logo" src="./logo.png" alt="">
+    </div>
+    <input type="button" id="play" value="播放">
+    <input type="button" id="pause" value="暂停">
+
+    <script>
+        var play = document.querySelector('#play');
+        var pause = document.querySelector('#pause');
+        var panel = document.querySelector('.panel');
+
+        play.onclick = function () {
+            panel.classList.add('play');
+        }
+
+        pause.onclick = function () {
+            pause.classList.remove('play');
+        }
+    </script>
+</body>
+
+</html>
